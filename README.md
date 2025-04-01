@@ -18,4 +18,4 @@ This is a staff portal application built using Laravel and MySQL. It allows staf
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/yourusername/unep-staff-portal.git
+   git clone https://github.com/KevSila/unep-staff-portal.git
