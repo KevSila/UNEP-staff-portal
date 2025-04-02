@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Language;  // Import Language model
+use App\Models\SoftwareExpertise;  // Import SoftwareExpertise model
+use App\Models\EducationLevel;  // Import EducationLevel model
+use App\Models\DutyStation;  // Import DutyStation model
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,11 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Call the individual seeders to populate data for different tables
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $this->call(LanguageSeeder::class);  // Seed data for languages
+        $this->call(SoftwareExpertiseSeeder::class);  // Seed data for software expertise
+        $this->call(EducationLevelSeeder::class);  // Seed data for education levels
+        $this->call(DutyStationSeeder::class);  // Seed data for duty stations
+
+        // Create 10 test users using factory
+        User::factory(10)->create();
     }
 }
